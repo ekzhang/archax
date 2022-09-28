@@ -62,32 +62,32 @@ def bench_matmul():
 def train_mnist():
     train_images, train_labels, test_images, test_labels = datasets.mnist()
 
-    def get_model():
-        return hk.Sequential(
-            [
-                hk.Linear(5000),
-                nn.relu,
-                hk.Linear(3000),
-                nn.relu,
-                hk.Linear(10),
-            ]
-        )
+    class MnistMLP(hk.Module):
+        def __call__(self, x):
+            x = hk.Linear(5000)(x)
+            x = nn.relu(x)
+            x = hk.Linear(3000)(x)
+            x = nn.relu(x)
+            x = hk.Linear(10)(x)
+            return x
 
-    def loss_fn(images, labels):
-        mlp = get_model()
-        logits = mlp(images)
+    @hk.without_apply_rng
+    @hk.transform
+    def model(x):
+        mlp = MnistMLP()
+        return mlp(x)
+
+    @jit
+    def loss_fn(params, images, labels):
+        logits = model.apply(params, images)
         return jnp.mean(optax.softmax_cross_entropy(logits, labels))
 
-    def accuracy_fn(images, labels):
-        mlp = get_model()
-        logits = mlp(images)
-        return jnp.mean(jnp.argmax(logits, axis=-1) == jnp.argmax(labels, axis=-1))
-
-    loss_fn_t = hk.transform(loss_fn)
-    loss_fn_t = hk.without_apply_rng(loss_fn_t)
-
-    accuracy_fn_t = hk.transform(accuracy_fn)
-    accuracy_fn_t = hk.without_apply_rng(accuracy_fn_t)
+    @jit
+    def loss_acc_fn(params, images, labels):
+        logits = model.apply(params, images)
+        loss = jnp.mean(optax.softmax_cross_entropy(logits, labels))
+        acc = jnp.mean(jnp.argmax(logits, axis=-1) == jnp.argmax(labels, axis=-1))
+        return loss, acc
 
     def data_stream(images, labels, repeat=True):
         num_data = images.shape[0]
@@ -106,14 +106,15 @@ def train_mnist():
     batches = data_stream(train_images, train_labels)
     optimizer = optax.adam(1e-3)
 
-    rng = random.PRNGKey(42)
-    params = loss_fn_t.init(rng, *next(batches))
+    rng = hk.PRNGSequence(random.PRNGKey(42))
+    params = model.init(next(rng), next(batches)[0])
+    print("params:", tree_util.tree_map(lambda x: x.shape, params))
     opt_state = optimizer.init(params)
 
     for i, (images, labels) in enumerate(batches):
         print(f"Starting next training iteration {i + 1}...")
         start_time = time.time()
-        grads = grad(loss_fn_t.apply)(params, images, labels)
+        grads = grad(loss_fn)(params, images, labels)
         updates, opt_state = optimizer.update(grads, opt_state)
         params = optax.apply_updates(params, updates)
         print(f"  time taken: {time.time() - start_time:.2f} seconds")
@@ -122,8 +123,7 @@ def train_mnist():
             batch_losses = []
             batch_accs = []
             for (images, labels) in data_stream(test_images, test_labels, repeat=False):
-                batch_loss = loss_fn_t.apply(params, images, labels)
-                batch_acc = accuracy_fn_t.apply(params, images, labels)
+                batch_loss, batch_acc = loss_acc_fn(params, images, labels)
                 batch_losses.append(batch_loss)
                 batch_accs.append(batch_acc)
             test_loss = np.mean(batch_losses)
