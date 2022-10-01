@@ -10,10 +10,8 @@ BATCH_SIZE = 1024
 
 image_cpu = (
     modal.Image.conda()
-    # .conda_install(["jax"], channels=["conda-forge"])
-    .run_commands(["conda install jax -c conda-forge --yes"]).pip_install(
-        ["dm-haiku", "optax", "numpy"]
-    )
+    .conda_install(["jax"], channels=["conda-forge"])
+    .pip_install(["dm-haiku", "optax", "numpy"])
 )
 image_gpu = (
     modal.Image.conda().run_commands(
