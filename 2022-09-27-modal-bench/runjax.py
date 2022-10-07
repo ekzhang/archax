@@ -16,10 +16,10 @@ image_cpu = (
 image_gpu = (
     modal.Image.conda().run_commands(
         [
-            'CONDA_OVERRIDE_CUDA="11.2" conda install jax cuda-nvcc -c conda-forge -c nvidia --yes'
+            'CONDA_OVERRIDE_CUDA="11.7" conda install jax cuda-nvcc -c conda-forge -c nvidia/label/cuda-11.7.1 --yes'
         ]
     )
-    # .conda_install(["jax", "cuda-nvcc"], channels=["conda-forge", "nvidia"])
+    # .conda_install(["jax", "cuda-nvcc"], channels=["conda-forge", "nvidia/label/cuda-11.7.1"])
     .pip_install(["dm-haiku", "optax", "numpy"])
 )
 
