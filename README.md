@@ -9,7 +9,7 @@ Currently a work-in-progress. Written in Python, with a focus on performance and
 
 ## Installation
 
-```console
+```
 pip install pipejax
 ```
 
@@ -17,13 +17,13 @@ pip install pipejax
 
 This project has dependencies managed by `hatch`. To get started, install Python 3.8+ and Hatch with:
 
-```console
+```
 pip install --upgrade hatch
 ```
 
 That's it! Then, you can open a virtual environment with the project. For example, to get a Python shell and start playing with the library:
 
-```console
+```
 hatch run python
 
 >>> import pipejax
