@@ -70,16 +70,24 @@ def inspect_module(module_obj: xla.HloModule) -> None:
     print("cost analysis:", xla.hlo_module_cost_analysis(client, module_obj))
 
 
+def save_dot_graph(module_obj: xla.HloModule, filename: str) -> None:
+    graph = xla.hlo_module_to_dot_graph(module_obj)
+    with open(filename, "w") as f:
+        f.write(graph)
+
+
 def main():
     z: xla.XlaComputation = jax.xla_computation(dlfn)(jnp.ones(256))
 
     original_hlo = z.as_hlo_module()
     print_module(original_hlo)
     inspect_module(original_hlo)
+    save_dot_graph(original_hlo, "original_hlo.dot")
 
     optimized_hlo = get_optimized_hlo(z)
     print_module(optimized_hlo)
     inspect_module(optimized_hlo)
+    save_dot_graph(optimized_hlo, "optimized_hlo.dot")
 
 
 if __name__ == "__main__":
