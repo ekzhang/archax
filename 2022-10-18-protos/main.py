@@ -1,8 +1,9 @@
 from tensorflow.compiler.xla import xla_data_pb2
 from tensorflow.compiler.xla.service import hlo_pb2
 
+import jax
 import jax.numpy as jnp
-from jax import grad, xla_computation
+import jaxlib.xla_extension as xla
 
 
 def tanh(x):
@@ -15,10 +16,17 @@ def lfn(x):
 
 
 def dlfn(x):
-    return grad(lfn)(x)
+    return jax.grad(lfn)(x)
 
 
-z = xla_computation(dlfn)(jnp.ones(256))
+client: xla.Client = jax.lib.xla_bridge.get_backend()
+
+
+def get_optimized_hlo(c: xla.XlaComputation) -> xla.HloModule:
+    e: xla.Executable = client.compile(c)
+    modules = e.hlo_modules()
+    assert len(modules) == 1, "Expected exactly one HLO module"
+    return modules[0]
 
 
 def variable_shape(shape: xla_data_pb2.ShapeProto) -> str:
@@ -40,14 +48,39 @@ def program_shape(shape: xla_data_pb2.ProgramShapeProto) -> str:
     return f"({params}) -> {ret_ty}"
 
 
-print(z.as_hlo_text())
+def print_module(module_obj: xla.HloModule) -> None:
+    print("\n::: ---------- HLO MODULE ----------")
+    print(module_obj.to_string(xla.HloPrintOptions.short_parsable()))
 
-module = hlo_pb2.HloModuleProto.FromString(z.as_serialized_hlo_module_proto())
-print("name:", module.name)
-print("num computations:", len(module.computations))
 
-for i, computation in enumerate(module.computations):
-    print(f"computation #{i+1}:")
-    print(f"  - name: {computation.name}")
-    print(f"  - shape: {program_shape(computation.program_shape)}")
-    print(f"  - instructions: {len(computation.instructions)}")
+def inspect_module(module_obj: xla.HloModule) -> None:
+    print("\n::: ---------- HLO INSPECT ----------")
+    module = hlo_pb2.HloModuleProto.FromString(
+        module_obj.as_serialized_hlo_module_proto()
+    )
+    print("name:", module.name)
+    print("num computations:", len(module.computations))
+
+    for i, computation in enumerate(module.computations):
+        print(f"computation #{i+1}:")
+        print(f"  - name: {computation.name}")
+        print(f"  - shape: {program_shape(computation.program_shape)}")
+        print(f"  - instructions: {len(computation.instructions)}")
+
+    print("cost analysis:", xla.hlo_module_cost_analysis(client, module_obj))
+
+
+def main():
+    z: xla.XlaComputation = jax.xla_computation(dlfn)(jnp.ones(256))
+
+    original_hlo = z.as_hlo_module()
+    print_module(original_hlo)
+    inspect_module(original_hlo)
+
+    optimized_hlo = get_optimized_hlo(z)
+    print_module(optimized_hlo)
+    inspect_module(optimized_hlo)
+
+
+if __name__ == "__main__":
+    main()
