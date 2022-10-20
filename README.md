@@ -9,6 +9,8 @@ Currently a work-in-progress. Written in Python, with a focus on performance and
 
 ## Installation
 
+**TODO: This command doesn't work until we publish the first version of the library. See the "Development" section instead.**
+
 ```
 pip install pipejax
 ```
