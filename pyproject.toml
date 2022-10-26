@@ -18,7 +18,10 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = [
+  "jax[cpu]~=0.3",
+  "numpy~=1.23",
+]
 dynamic = ["version"]
 
 [project.urls]
