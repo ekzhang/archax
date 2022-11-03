@@ -2,8 +2,13 @@
 
 Trying embedding text inputs on CPUs/GPUs.
 
-- `train_embedding.py` learns the embedding and caches to local.
-- `perform_embedding.py` times the vectorization and embedding cost.
+### Instructions
+```
+cd 2022-10-31-alpa
+python3 train_embedding.py
+```
+
+Then run the `experiment.ipynb` notebook.
 
 ### Reference
 
