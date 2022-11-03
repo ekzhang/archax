@@ -15,17 +15,12 @@ from tensorflow.keras.layers import Dense, Embedding, GlobalAveragePooling1D
 from tensorflow.keras.layers import TextVectorization
 from tensorflow.python.client import device_lib
 
-def time_imdb_embedding(device, count):
+def time_imdb_embedding(device='gpu', count=20000):
     """
     Measures the time needed to vectorize and embed IMDB datasets
     - device: either "cpu" or "gpu"
     - count: number of test samples to use, between 1 and 20000 (inclusively)
     """
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--device', default='gpu')
-    parser.add_argument('-c', '--count', default='20000', type=int)
-    args = parser.parse_args()
 
     # mask GPU device to run on CPU
     if device == 'cpu':
@@ -63,5 +58,5 @@ def time_imdb_embedding(device, count):
         finish_time = time.time()
         embedding_time = finish_time - start_time
 
-        print('{}\t{}'.format(vectorization_time, embedding_time))
+        return vectorization_time, embedding_time
         
