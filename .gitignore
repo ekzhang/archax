@@ -2,8 +2,9 @@
 .coverage
 __pycache__/
 dist/
-2022-10-31-alpa/aclImdb
-2022-10-31-alpa/aclImdb_v1.tar.gz
-2022-10-31-alpa/trials
-2022-10-31-alpa/logs
-2022-10-31-alpa/imdb_classification_model.pkl
+2022-10-31-imdb/aclImdb
+2022-10-31-imdb/aclImdb_v1.tar.gz
+2022-10-31-imdb/trials
+2022-10-31-imdb/logs
+2022-10-31-imdb/imdb_classification_model.pkl
+2022-11-07-flower/*.pickle
