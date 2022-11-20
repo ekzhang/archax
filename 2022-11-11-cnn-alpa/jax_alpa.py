@@ -25,22 +25,23 @@ def display_top(snapshot, key_type='lineno', limit=7):
     ))
     top_stats = snapshot.statistics(key_type)
 
-    print("Top %s lines" % limit)
+    #print("Top %s lines" % limit)
     for index, stat in enumerate(top_stats[:limit], 1):
         frame = stat.traceback[0]
         filename = os.sep.join(frame.filename.split(os.sep)[-2:])
-        print("#%s: %s:%s: %.1f KiB"
-              % (index, filename, frame.lineno, stat.size / 1024))
+        #print("#%s: %s:%s: %.1f KiB"
+        #      % (index, filename, frame.lineno, stat.size / 1024))
         line = linecache.getline(frame.filename, frame.lineno).strip()
-        if line:
-            print('    %s' % line)
+        #if line:
+        #    print('    %s' % line)
 
     other = top_stats[limit:]
     if other:
         size = sum(stat.size for stat in other)
-        print("%s other: %.1f KiB" % (len(other), size / 1024))
+        #print("%s other: %.1f KiB" % (len(other), size / 1024))
     total = sum(stat.size for stat in top_stats)
-    print("Total allocated size: %.1f KiB" % (total / 1024))
+    #print("Total allocated size: %.1f KiB" % (total / 1024))
+    return total
 
 CLASSES, LR, BATCH_SIZE = 10, 0.001, 1024
 IMG_ROWS, IMG_COLS = 28, 28
@@ -108,7 +109,7 @@ weights = cnn.init(next(rng), next(batches)[0])
 opt_state = optimizer.init(weights)
 
 step_count = 0
-MAX_STEPS = 7
+MAX_STEPS = 20
 
 @alpa.parallelize
 def train_step(weights, opt_state, x_batch, y_batch):
@@ -119,11 +120,12 @@ def train_step(weights, opt_state, x_batch, y_batch):
 
 start_time = time.time()
 tracemalloc.start()
+memory_lst, time_lst = [], []
 for i, (x_batch, y_batch) in enumerate(batches):
     weights, opt_state = train_step(weights, opt_state, x_batch, y_batch)
 
     if (i + 1) % 50 == 0:
-        print("Fifty update steps took, " + str(round(time.time() - start_time, 4)) + " seconds")
+        time_lst.append(time.time() - start_time)
         start_time = time.time()
         batch_losses = []
         batch_accs = []
@@ -135,9 +137,11 @@ for i, (x_batch, y_batch) in enumerate(batches):
         print(f"Loss: {loss} - Accuracy: {acc}")
         step_count += 1
         snapshot = tracemalloc.take_snapshot()
-        display_top(snapshot)
+        mem_total = display_top(snapshot)
+        memory_lst.append(mem_total)
     if step_count == MAX_STEPS:
         break
+print(f"Memory: {round(np.mean(memory_lst) / 1000000, 4)}, Time: {round(np.mean(time_lst, 4))}")
 
 
 
