@@ -5,7 +5,7 @@ Code was inspired by: https://github.com/PacktPublishing/Advanced-Deep-Learning-
 
 ### Layers
 
-Currently the model has two layers:
+Currently the model has two layers:  
     - SimpleRNN (with dropout)  
     - Dense layer (with softmax activation)  
 
