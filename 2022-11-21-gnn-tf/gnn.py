@@ -146,4 +146,8 @@ history = model.fit(
     validation_data = val_data
 )
 
+with open('gnn.pickle', 'wb') as fout:
+    pickle.dump(model, fout)
+
+
 
