@@ -8,8 +8,6 @@ from tensorflow.keras.utils import to_categorical
 import os
 import pickle
 
-# Citation: https://github.com/PacktPublishing/Advanced-Deep-Learning-with-Keras/blob/master/chapter1-keras-quick-tour/rnn-mnist-1.5.1.py
-
 # Setting variables.
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 device_str = '/CPU:0'
