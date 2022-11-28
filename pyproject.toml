@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pipejax"
+name = "archax"
 description = "A network-optimized flexible parallelism library for JAX"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -25,12 +25,12 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-Documentation = "https://github.com/ekzhang/pipejax#readme"
-Issues = "https://github.com/ekzhang/pipejax/issues"
-Source = "https://github.com/ekzhang/pipejax"
+Documentation = "https://github.com/ekzhang/archax#readme"
+Issues = "https://github.com/ekzhang/archax/issues"
+Source = "https://github.com/ekzhang/archax"
 
 [tool.hatch.version]
-path = "pipejax/__about__.py"
+path = "archax/__about__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -38,17 +38,18 @@ dependencies = [
   "pytest-cov",
 ]
 [tool.hatch.envs.default.scripts]
-cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=pipejax --cov=tests"
-no-cov = "cov --no-cov"
+test = "pytest --no-cov"
+test-cov = "pytest --cov --cov-report=term-missing --cov-config=pyproject.toml"
 
 [[tool.hatch.envs.test.matrix]]
 python = ["38", "39", "310", "311"]
 
 [tool.coverage.run]
+source_pkgs = ["archax", "tests"]
 branch = true
 parallel = true
 omit = [
-  "pipejax/__about__.py",
+  "archax/__about__.py",
 ]
 
 [tool.coverage.report]

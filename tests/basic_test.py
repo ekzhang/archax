@@ -1,4 +1,4 @@
-from pipejax import add
+from archax import add
 
 import numpy as np
 import jax

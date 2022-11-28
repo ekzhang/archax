@@ -1,9 +1,9 @@
-# pipejax
+# archax
 
-[![PyPI - Version](https://img.shields.io/pypi/v/pipejax.svg)](https://pypi.org/project/pipejax)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pipejax.svg)](https://pypi.org/project/pipejax)
+[![PyPI - Version](https://img.shields.io/pypi/v/archax.svg)](https://pypi.org/project/archax)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/archax.svg)](https://pypi.org/project/archax)
 
-A network-optimized flexible parallelism library for JAX, supporting an automatically optimized mix of pipeline and operator parallelism on accelerated devices.
+A multi-architecture parallelism library for JAX, supporting an automatically optimized mix of pipeline and operator parallelism on accelerated devices. Use both CPU and GPU in the same program, and automatically interleave between them.
 
 Currently a work-in-progress. Written in Python, with a focus on performance and composability.
 
@@ -12,7 +12,7 @@ Currently a work-in-progress. Written in Python, with a focus on performance and
 **TODO: This command doesn't work until we publish the first version of the library. See the "Development" section instead.**
 
 ```
-pip install pipejax
+pip install archax
 ```
 
 ## Development
@@ -28,7 +28,7 @@ That's it! Then, you can open a virtual environment with the project. For exampl
 ```
 hatch run python
 
->>> import pipejax
+>>> import archax
 >>> ...
 ```
 
@@ -42,4 +42,4 @@ There are some top-level folders that start with dates. These are used for early
 
 ## License
 
-`pipejax` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+`archax` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

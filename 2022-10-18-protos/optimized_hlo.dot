@@ -346,31 +346,31 @@ label = <Fused expression for <b>fusion</b><br/>loop fusion<br/>kind=kLoop>;
 labelloc = t;
 tooltip = " ";
 5994943440 [label=<<b>multiply.0</b><br/>f32[256]<br/><b>operand 1</b> = f32[256] -2>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994946000 [label=<<b>multiply.1</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994950448 [label=<<b>add.0</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/add_any
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994956080 [label=<<b>negate.0</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/neg
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994958192 [label=<<b>divide.0</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/div
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994962432 [label=<<b>negate.1</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/neg
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994967120 [label=<<b>multiply.2</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994970736 [label=<<b>multiply.3</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994974464 [label=<<b>divide.1</b><br/>f32[256]<br/><b>operand 0</b> = f32[256] 1>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/div
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994977648 [label=<<b>multiply.4</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994978928 [label=<<b>broadcast.0</b><br/>dimensions={}<br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/broadcast_in_dim[shape=(256,) broadcast_dimensions=()]
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="black", fillcolor="white"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="black", fillcolor="white"];
 5994985056 [label=<<b>add.1</b><br/>f32[256]<br/><b>operand 1</b> = f32[256] 1>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/add
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994989456 [label=<<b>subtract.0</b><br/>f32[256]<br/><b>operand 0</b> = f32[256] 1>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/sub
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994994368 [label=<<b>Parameter 0</b><br/>f32[256]>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
 5995001408 [label=<<b>Parameter 1</b><br/>f32[]>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
 
@@ -382,9 +382,9 @@ label = <Fused expression for <b>fusion.1</b><br/>loop fusion<br/>kind=kLoop>;
 labelloc = t;
 tooltip = " ";
 5995006144 [label=<<b>divide.2</b><br/>f32[]<br/><b>operand 0</b> = f32[] 1>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/div
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="black", fillcolor="white"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="black", fillcolor="white"];
 5995010720 [label=<<b>reduce.1</b><br/>Subcomputation: <b>add</b><br/>dimensions={0}<br/>f32[]<br/><b>operand 1</b> = f32[] 0>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/reduce_sum[axes=(0,)]
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="#af8eb5", fillcolor="#e1bee7"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="#af8eb5", fillcolor="#e1bee7"];
 5995017008 [label=<<b>Parameter 0</b><br/>f32[8]>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
 
 }  // cluster_5995007216
@@ -395,11 +395,11 @@ label = <Fused expression for <b>fusion.2</b><br/>loop fusion<br/>kind=kLoop>;
 labelloc = t;
 tooltip = " ";
 5995018976 [label=<<b>divide.3</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/div
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995023152 [label=<<b>add.2</b><br/>f32[256]<br/><b>operand 1</b> = f32[256] 1>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/add
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995026912 [label=<<b>subtract.1</b><br/>f32[256]<br/><b>operand 0</b> = f32[256] 1>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/sub
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995028016 [label=<<b>Parameter 0</b><br/>f32[256]>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
 
 }  // cluster_5995020224
@@ -410,9 +410,9 @@ label = <Fused expression for <b>fusion.3</b><br/>loop fusion<br/>kind=kLoop>;
 labelloc = t;
 tooltip = " ";
 5995035200 [label=<<b>exponential.0</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/exp
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995039136 [label=<<b>multiply.5</b><br/>f32[256]<br/><b>operand 1</b> = f32[256] -2>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995040112 [label=<<b>Parameter 0</b><br/>f32[256]>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
 
 }  // cluster_5995036464

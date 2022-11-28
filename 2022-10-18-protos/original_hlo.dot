@@ -275,45 +275,45 @@ stylesheet=<
 
 5995606144 [label=<<b>Parameter 0</b><br/>f32[256]>, shape=rect, tooltip="", style="filled", fontcolor="black", color="#cbae82", fillcolor="#ffe0b2"];
 5995602400 [label=<<b>broadcast.3</b><br/>dimensions={}<br/>f32[256]<br/><b>operand</b> = f32[] -2>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
 5995580816 [label=<<b>broadcast.5</b><br/>dimensions={}<br/>f32[256]<br/><b>operand</b> = f32[] 1>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/sub
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
 5995583472 [label=<<b>multiply.8</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994899392 [label=<<b>exponential.9</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/exp
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994900224 [label=<<b>subtract.10</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/sub
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994933984 [label=<<b>add.11</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/add
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995355424 [label=<<b>divide.12</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/div
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995356256 [label=<<b>multiply.13</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995357088 [label=<<b>divide.14</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/div
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995357920 [label=<<b>reduce.19</b><br/>Subcomputation: <b>add</b><br/>dimensions={0}<br/>f32[]<br/><b>operand 1</b> = f32[] 0>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/reduce_sum[axes=(0,)]
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="#af8eb5", fillcolor="#e1bee7"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="#af8eb5", fillcolor="#e1bee7"];
 5995358768 [label=<<b>divide.20</b><br/>f32[]<br/><b>operand 0</b> = f32[] 1>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/div
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="black", fillcolor="white"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="black", fillcolor="white"];
 5995359600 [label=<<b>broadcast.21</b><br/>dimensions={}<br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/broadcast_in_dim[shape=(256,) broadcast_dimensions=()]
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:15", style="filled", fontcolor="black", color="#97b498", fillcolor="#c8e6c9"];
 5995360448 [label=<<b>multiply.22</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995361280 [label=<<b>multiply.23</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995362864 [label=<<b>negate.24</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/neg
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995363696 [label=<<b>divide.25</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/div
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995364528 [label=<<b>negate.26</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/neg
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995365360 [label=<<b>add.27</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/add_any
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:11", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995366192 [label=<<b>multiply.28</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5995367024 [label=<<b>multiply.29</b><br/>f32[256]>, shape=rect, tooltip="xla_computation(dlfn)/jit(main)/mul
-source: /Users/ezhang/Documents/projects/pipejax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
+source: /Users/ezhang/Documents/projects/archax/2022-10-18-protos/main.py:10", style="filled", fontcolor="black", color="#cbc693", fillcolor="#fff9c4"];
 5994939216 [label=<<b>tuple.30</b><br/>(f32[256])>, shape=rect, tooltip="", style="filled", fontcolor="black", color="black", fillcolor="white"];
 cluster_5995531136 [label=<ROOT>, shape=circle, tooltip=" ", style="filled", fontcolor="black", color="#8c7b75", fillcolor="#bcaaa4"];
 5995606144 -> 5995583472 [arrowhead=empty tooltip="Arg_0.1 -> multiply.8"  headlabel="0", labeldistance=2];
