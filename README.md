@@ -1,45 +1,13 @@
 # archax
 
-[![PyPI - Version](https://img.shields.io/pypi/v/archax.svg)](https://pypi.org/project/archax)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/archax.svg)](https://pypi.org/project/archax)
+**Experiments in multi-architecture parallelism for deep learning with JAX.**
 
-A multi-architecture parallelism library for JAX, supporting an automatically optimized mix of pipeline and operator parallelism on accelerated devices. Use both CPU and GPU in the same program, and automatically interleave between them.
+![Example JAX computation graph](https://gist.githubusercontent.com/ekzhang/146eb9d1a09fd264da9f6a177e970146/raw/a8165a2a1e1da4a7b6a75eccb89f75cf191430c8/optimized_hlo.svg)
 
-Currently a work-in-progress. Written in Python, with a focus on performance and composability.
+What if we could create a new kind of multi-architecture parallelism library for deep learning compilers, supporting expressive frontends like JAX? This would optimize a mix of pipeline and operator parallelism on accelerated devices. Use both CPU, GPU, and/or TPU in the same program, and automatically interleave between them.
 
-## Installation
-
-**TODO: This command doesn't work until we publish the first version of the library. See the "Development" section instead.**
-
-```
-pip install archax
-```
-
-## Development
-
-This project has dependencies managed by `hatch`. To get started, install Python 3.8+ and Hatch with:
-
-```
-pip install --upgrade hatch
-```
-
-That's it! Then, you can open a virtual environment with the project. For example, to get a Python shell and start playing with the library:
-
-```
-hatch run python
-
->>> import archax
->>> ...
-```
-
-You can run tests using `hatch run pytest`, or use `hatch run cov` to measure code coverage in tests.
-
-There are some top-level folders that start with dates. These are used for early one-off experiments and not intended to be part of the library.
-
-### GPU and TPU development
-
-**TODO: Create development / test environments for running the library on GPUs and TPUs.**
+Experiments are given in this repository, dated and annotated with brief descriptions.
 
 ## License
 
-`archax` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
+All code and notebooks in this repository are distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
